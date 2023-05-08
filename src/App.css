@@ -1,0 +1,192 @@
+.App {
+  height: 100vh;
+  color: white;
+  background-color: #020230;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url("./assets/kbc.webp")center;
+  height: 100%;
+  background-size: cover;
+}
+
+.quiz {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.question {
+  width: 80%;
+  margin-bottom: 10px;
+  background: linear-gradient(#100241, black);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  font-size: 20px;
+}
+
+
+.answers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.answer {
+  width: 40%;
+  height: 40%;
+  padding: 10px;
+  margin: 0 10px 20px 10px;
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid white;
+  border-radius: 65px;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.answer:hover,
+.answer.active {
+  /* background: mediumblue; */
+}
+
+.answer.correct {
+  animation: correct 500ms ease forwards;
+}
+
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: yellow;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: #33d40f;
+  }
+}
+
+.answer.wrong {
+  animation: wrong 500ms ease forwards;
+}
+
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: yellow;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: red;
+  }
+}
+
+.item {
+  display: inline-block;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  width: auto;
+}
+
+.item.active {
+  background-color: teal;
+}
+
+.money {
+  background-color: #020230;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-list {
+  padding: 20px;
+  list-style: none;
+  width: 100%;
+}
+
+.amount {
+  font-size: 18px;
+  text-align: center;
+}
+
+.timer {
+  width: 80px;
+  height: 80px;
+  color: white;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 80px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.earned {
+  position: relative;
+  border: black solid 2px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: white;
+  margin: auto;
+  margin-top: 150px;
+  color: black;
+  font-weight: 600;
+}
+.timer{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: rgb(9, 15, 23);
+}
+@media only screen and (max-width: 768px) {
+  .List {
+    display: none;
+  }
+  .restart{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .quit{
+    position: absolute;
+    top: 5px;
+    right: 120px;
+  }
+
+}
+@media only screen and (min-width: 761px){
+  .restart{
+    display: none;
+  }
+  .quit{
+    display: none;
+  }
+  
+}
